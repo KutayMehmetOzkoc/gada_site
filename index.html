@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadasını Aldığım | Ankara'nın Mantı Durayı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .handwritten {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .hero-section {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+                url('/assets/main.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 text-gray-900">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 glass border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <a href="index.html" class="text-3xl font-bold text-red-600 handwritten tracking-wider">Gadasını Aldığım Mantı</a>
+
+            <div class="hidden md:flex space-x-10 font-bold uppercase text-xs tracking-widest text-gray-600">
+                <a href="index.html" class="text-red-600 border-b-2 border-red-600 pb-1">Ana Sayfa</a>
+                <a href="urunler.html" class="hover:text-red-600 transition duration-300">Lezzetler</a>
+                <a href="iletisim.html" class="hover:text-red-600 transition duration-300">İletişim</a>
+            </div>
+
+            <div class="flex items-center">
+                <a href="#siparis-platformlari"
+                    class="bg-red-600 text-white px-6 py-2 rounded-full font-bold text-xs hover:bg-red-700 transition transform hover:scale-105 shadow-md uppercase tracking-wider">
+                    Sipariş Ver
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section h-screen flex items-center justify-center text-center text-white px-6">
+        <div class="max-w-3xl transform -translate-y-10">
+            <span
+                class="bg-red-600 text-xs font-bold uppercase tracking-[0.3em] px-4 py-2 rounded mb-6 inline-block shadow-lg">Ankara
+                Bahçelievler</span>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 leading-tight">Gadasını Aldığım <br>
+                <h1 class="text-5xl md:text-8xl font-bold mb-6 leading-tight">
+                    Hoş Geldin <br>
+                    <span id="typewriter" class="text-red-500 handwritten"></span>
+                    <br>
+                    <span class="text-red-500 animate-pulse"></span>
+                </h1>
+            </h1>
+            <p class="text-lg md:text-xl mb-10 font-light text-gray-100 opacity-90 leading-relaxed">
+                Kayseri'nin bereketli geleneklerini Ankara'nın kalbine taşıdık. Her hamurda bir hikaye, her lokmada bir
+                "Gadasını Aldığım" samimiyeti var.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="urunler.html"
+                    class="bg-white text-gray-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-red-600 hover:text-white transition duration-500 shadow-2xl">
+                    Menüyü Keşfet
+                </a>
+                <a href="iletisim.html"
+                    class="border-2 border-white/50 backdrop-blur-sm text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition duration-500">
+                    Konum Al
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 bg-white relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-sm font-bold text-red-600 uppercase tracking-widest mb-4">Mirasımız</h2>
+            <h3 class="text-4xl font-bold text-gray-900 mb-8">Emeğimiz, Bizim En Büyük Sırrımız</h3>
+            <p class="text-gray-500 text-lg leading-relaxed mb-12 italic">
+                "Bizde mantı makineden çıkmaz, el emeğinden doğar. Gözleme saçta değil, gönülde pişer. Gadasını aldığım,
+                gerçek lezzet için doğru yerdesin."
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="text-4xl mb-4">🥟</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Taze Açım</h4>
+                    <p class="text-gray-400 text-sm italic">Her gün taze yufka</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Sıcak Sunum</h4>
+                    <p class="text-gray-400 text-sm italic">Dumanı üstünde</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4">❤️</div>
+                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Aile Sıcaklığı</h4>
+                    <p class="text-gray-400 text-sm italic">Güler yüzlü hizmet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-red-50 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-200 rounded-full opacity-50 blur-2xl"></div>
+                <img src="/assets/main2.jpg"
+                    class="rounded-[2rem] shadow-2xl relative z-10 w-full h-[400px] object-cover border-8 border-white"
+                    alt="Kadın Girişimci Hikayesi">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20">
+                    <span class="text-3xl">👩‍🍳</span>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-tighter mt-2">Kadın Girişimci</p>
+                    <p class="text-red-600 font-bold text-lg leading-none italic">Yüzde Yüz Emek</p>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 text-left">
+                <h2 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Bizim Hikayemiz</h2>
+                <h3 class="text-4xl font-bold text-gray-900 mb-6 leading-tight">Bir Kadın Girişimcinin <br><span
+                        class="text-red-600">Lezzet Yolculuğu</span></h3>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Gadasını Aldığım, sadece bir dükkan değil; bir kadının hayallerini, mutfaktaki tecrübesini ve
+                    Anadolu'nun misafirperverliğini sofralara taşıma çabasıdır.
+                </p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start gap-4">
+                        <span class="text-red-600 text-xl font-bold">✓</span>
+                        <p class="text-gray-700"><strong>Yerel Üretim:</strong> Kadın emeğini ve yerel malzemeyi
+                            önceliklendiriyoruz.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-red-600 text-xl font-bold">✓</span>
+                        <p class="text-gray-700"><strong>Geleneksel Yöntem:</strong> Ninelerimizden öğrendiğimiz
+                            usullerle, hiçbir katkı maddesi kullanmadan üretiyoruz.</p>
+                    </div>
+                </div>
+                <p class="handwritten text-2xl text-red-600">"Hayallerimizi emekle harmanladık."</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-50 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="text-left md:w-1/2">
+                    <h2 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Sosyal Medyada Biz</h2>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6">Mutfaktaki Her Anı <br><span
+                            class="text-red-500">Instagram'da Paylaşıyoruz</span></h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        En yeni ürünlerimizi, günlük çıkan taze tepsi mantılarımızı ve dükkanımızdan sıcak kareleri
+                        kaçırmamak için bizi takip edin.
+                    </p>
+                    <a href="https://instagram.com/gadasini_aldigim_manti" target="_blank"
+                        class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition transform">
+                        <span>Takip Et @gadasini_aldigim_manti</span>
+                    </a>
+                </div>
+
+                <div class="w-full md:w-1/2 relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-200 rounded-full opacity-50 blur-2xl"></div>
+                <img src="/assets/logo.jpg"
+                    class="rounded-[2rem] shadow-2xl relative z-10 w-full h-[400px] object-cover border-8 border-white"
+                    alt="Kadın Girişimci Hikayesi">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20">
+                    <span class="text-3xl">👩‍🍳</span>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-tighter mt-2">Her gün</p>
+                    <p class="text-red-600 font-bold text-lg leading-none italic">İştah Açıcı Videolar İçin...</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pb-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] shadow-2xl h-[500px]">
+                <img src="/assets/mantilar/manti2.webp"
+                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-12">
+                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Geleneksel</h4>
+                    <h3 class="text-white text-4xl font-bold mb-4">Mantı</h3>
+                    <p
+                        class="text-gray-300 font-light mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        Kayseri'nin o meşhur dokusunu her lokmada hisset.</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] shadow-2xl h-[500px]">
+                <img src="/assets/gozleme.jpeg"
+                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-12">
+                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Çıtır Çıtır</h4>
+                    <h3 class="text-white text-4xl font-bold mb-4">Gözlemeler</h3>
+                    <p
+                        class="text-gray-300 font-light mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        İç harcı bol, dışı altın sarısı el emeği lezzetler.</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] shadow-2xl h-[500px]">
+                <img src="/assets/icli.jpg"
+                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-12">
+                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Lezzetli</h4>
+                    <h3 class="text-white text-4xl font-bold mb-4">İçli Köfte</h3>
+                    <p
+                        class="text-gray-300 font-light mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        Dışı incecik, içi bol cevizli ve baharatlı kıyma harcıyla tam kıvamında kızarmış ev lezzeti.</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] shadow-2xl h-[500px]">
+                <img src="/assets/sarma.webp"
+                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-12">
+                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Yumuşacık</h4>
+                    <h3 class="text-white text-4xl font-bold mb-4">Yaprak Sarması</h3>
+                    <p
+                        class="text-gray-300 font-light mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        İncecik asma yaprağına sarılı, bol baharatlı ve tam kararında ekşili, kalem gibi dizilmiş
+                        zeytinyağlı harika.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-b border-gray-50" id="siparis-platformlari">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Bize Buralardan da Ulaşabilirsiniz</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12 opacity-80 hover:opacity-100 transition duration-500">
+                
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-pink-50 rounded-2xl flex items-center justify-center mb-4 group-hover:shadow-lg transition">
+                        <a href="https://www.yemeksepeti.com/restaurant/suoe/gadasini-aldigim-manti-and-gozleme?utm_source=google&utm_medium=cpc&utm_campaign=19731861493&sem_tracker=19731861493&gad_source=1&gad_campaignid=19723092846&gbraid=0AAAAADssUlkrCyxvR7SZGYmQzjXocwvCb&gclid=Cj0KCQiAhaHMBhD2ARIsAPAU_D7gksT6ZsM4sKhIftdCd8jElZuAGTsgIvoHIgmq2kRc-rSrFRu1vEAaAk4VEALw_wcB" class="text-pink-600 font-bold text-xs">Yemek<br>sepeti</a>
+                    </div>
+                    <p class="text-gray-600 font-semibold text-sm tracking-tight">Yemeksepeti'ndeyiz</p>
+                </div>
+
+                <div class="flex flex-col items-center group">
+                    <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mb-4 group-hover:shadow-lg transition border border-orange-100">
+                        <a href="https://www.migros.com.tr/yemek/gadasini-aldigim-manti-gozleme-cankaya-yukari-bahcelievler-mah-st-1c6f1?gad_source=1&gad_campaignid=22751468369&gbraid=0AAAAAohUplaWkpNyMCrJmRixyPYm_jLBI&gclid=Cj0KCQiAhaHMBhD2ARIsAPAU_D7PiYjXnHB-fuHwHsPa4Dxpeon40dMD8T4diTshA4EhrYSp5YujaYwaAlzBEALw_wcB" class="text-orange-600 font-bold text-xs uppercase">Migros</a>
+                    </div>
+                    <p class="text-gray-600 font-semibold text-sm tracking-tight">Migros Yemek'teyiz</p>
+                </div>
+
+            </div>
+            <p class="mt-8 text-gray-400 text-xs italic">Arama kısmına "Gadasını Aldığım" yazmanız yeterli!</p>
+        </div>
+    </section>
+
+
+    <footer class="bg-stone-900 text-white py-16 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <h2 class="handwritten text-4xl text-red-500 mb-4">Gadasını Aldığım Mantı</h2>
+                <p class="text-gray-500 text-sm max-w-xs">Ankara Bahçelievler'de lezzetin ve samimiyetin buluşma
+                    noktası.</p>
+            </div>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+                <a href="index.html" class="hover:text-red-500 transition">Ana Sayfa</a>
+                <a href="urunler.html" class="hover:text-red-500 transition">Ürünler</a>
+                <a href="iletisim.html" class="hover:text-red-500 transition">İletişim</a>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-xs text-gray-600 uppercase tracking-widest mb-2">© 2026 Gadasını Aldığım</p>
+                <p class="text-[10px] text-gray-700 font-mono tracking-tighter">Handcrafted with passion</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+HTML
+<script>
+    const textElement = document.getElementById('typewriter');
+    // BURAYA İSTEDİĞİN KADAR KELİME EKLEYEBİLİRSİN
+    const phrases = [
+        "Mantı",
+        "Gözleme",
+        "Yağlama",
+        "İçli Köfte",
+        "Çiğ Börek"
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 150;
+
+    function typeEffect() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            // Silerken
+            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typeSpeed = 80; // Silme hızı daha seri
+        } else {
+            // Yazarken
+            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typeSpeed = 150; // Yazma hızı
+        }
+
+        // Kelime bittiğinde bekleme
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typeSpeed = 2000; // Kelime bitince 2 saniye bekle
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length; // Bir sonraki kelimeye geç
+            typeSpeed = 500; // Yeni kelimeye başlamadan önce yarım saniye bekle
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+    }
+
+    document.addEventListener('DOMContentLoaded', typeEffect);
+</script>
+
+</html>
