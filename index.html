@@ -1,364 +1,441 @@
 <!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadasını Aldığım | Ankara'nın Mantı Durağı</title>
-    <link rel="icon" type="image/png" href="/assets/logo.jpg">
-    <link rel="apple-touch-icon" href="/assets/logo.jpg">
+    <meta name="description"
+        content="Ankara Yukarı Bahçelievler'de Kayseri usulü el açması mantı, gözleme ve yağlama. Her gün taze, ev yapımı lezzetler.">
+    <meta name="theme-color" content="#f7f2ea">
+    <link rel="icon" type="image/png" href="assets/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/logo.jpg">
+    <script>document.documentElement.classList.add('js');</script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Pacifico&display=swap"
-        rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .handwritten {
-            font-family: 'Pacifico', cursive;
-        }
-
-        .hero-section {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
-                url('/assets/yemeksepeti/hero.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Sabit arka plan iOS'ta bozuk göründüğü için yalnızca masaüstünde */
-        @media (min-width: 768px) and (hover: hover) {
-            .hero-section {
-                background-attachment: fixed;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#16120f', cream: '#f7f2ea', paper: '#fffdf9', line: '#e7ded2', muted: '#6f655d',
+                        brand: { DEFAULT: '#b5532c', dark: '#97421f', soft: '#f6e4d9' }, coral: '#f0875e'
+                    },
+                    fontFamily: {
+                        display: ['Fraunces', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
             }
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-    </style>
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 
-<body class="bg-stone-50 text-gray-900">
+<body>
 
-    <nav class="sticky top-0 w-full z-50 transition-all duration-300 glass border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center gap-3">
+    <!-- Üst menü -->
+    <header class="site-header">
+        <div class="mx-auto max-w-6xl px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between gap-4">
+            <a href="index.html" class="wordmark" aria-label="Gadasını Aldığım — Ana sayfa">
+                <span class="wordmark-title">Gadasını Aldığım</span>
+                <span class="wordmark-sub">Mantı &amp; Mutfak</span>
+            </a>
 
-            <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 handwritten md:tracking-wider">Gadasını
-                Aldığım Mantı</a>
+            <nav class="hidden md:flex items-center gap-9" aria-label="Ana menü">
+                <a href="index.html" class="nav-link" aria-current="page">Ana Sayfa</a>
+                <a href="urunler.html" class="nav-link">Menü</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </nav>
 
-            <div class="hidden md:flex space-x-10 font-bold uppercase text-xs tracking-widest text-gray-600">
-                <a href="index.html" class="text-red-600 border-b-2 border-red-600 pb-1">Ana Sayfa</a>
-                <a href="urunler.html" class="hover:text-red-600 transition duration-300">Lezzetler</a>
-                <a href="iletisim.html" class="hover:text-red-600 transition duration-300">İletişim</a>
-            </div>
-
-            <div class="flex items-center gap-2">
-                <a href="#siparis-platformlari"
-                    class="hidden md:inline-block bg-red-600 text-white px-5 py-2 md:px-6 md:py-2 rounded-full font-bold text-[10px] md:text-xs hover:bg-red-700 transition transform hover:scale-105 shadow-md uppercase tracking-wider">
-                    Sipariş Ver
-                </a>
-                <a href="#siparis-platformlari" class="md:hidden p-2 text-red-600" aria-label="Sipariş ver">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <div class="flex items-center gap-1">
+                <a href="#siparis-platformlari" class="btn btn-primary btn-sm hidden md:inline-flex">Sipariş Ver</a>
+                <a href="#siparis-platformlari" class="icon-btn md:hidden text-brand" aria-label="Sipariş ver">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L20 8H6.2" />
                         <circle cx="9" cy="20" r="1.3" />
                         <circle cx="17" cy="20" r="1.3" />
                     </svg>
                 </a>
-                <button id="menu-btn" type="button" class="md:hidden p-2 -mr-2 text-gray-700" aria-label="Menüyü aç"
-                aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
-                </svg>
-            </button>
+                <button id="menu-btn" type="button" class="icon-btn md:hidden -mr-2" aria-label="Menüyü aç"
+                    aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" d="M4 8h16M4 16h16" />
+                    </svg>
+                    <svg class="icon-close hidden w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-5 font-bold uppercase text-xs tracking-widest text-gray-600">
-            <a href="index.html" class="block py-3 border-b border-gray-100 text-red-600">Ana Sayfa</a>
-            <a href="urunler.html" class="block py-3 border-b border-gray-100">Lezzetler</a>
-            <a href="iletisim.html" class="block py-3 border-b border-gray-100">İletişim</a>
-            <a href="#siparis-platformlari"
-                class="block mt-4 text-center bg-red-600 text-white py-3 rounded-full shadow-md">Sipariş Ver</a>
-        </div>
-    </nav>
-
-    <header
-        class="hero-section min-h-[calc(100svh-64px)] md:h-screen flex items-center justify-center text-center text-white px-6 py-12">
-        <div class="max-w-3xl"> <span
-                class="bg-red-600 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] px-4 py-2 rounded mb-6 inline-block shadow-lg">Ankara
-                Bahçelievler</span>
-
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight">
-                Gadasını Aldığım <br>
-                Hoş Geldin <br>
-                <span id="typewriter" class="text-red-500 handwritten inline-block min-h-[1.2em]"></span>
-            </h1>
-
-            <p class="text-base md:text-xl mb-10 font-light text-gray-100 opacity-90 leading-relaxed max-w-2xl mx-auto">
-                Kayseri'nin bereketli geleneklerini Ankara'nın kalbine taşıdık. Her hamurda bir hikaye, her lokmada bir
-                "Gadasını Aldığım" samimiyeti var.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
-                <a href="urunler.html"
-                    class="bg-white text-gray-900 px-8 py-3 md:px-10 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-red-600 hover:text-white transition duration-500 shadow-2xl">
-                    Menüyü Keşfet
-                </a>
-                <a href="iletisim.html"
-                    class="border-2 border-white/50 backdrop-blur-sm text-white px-8 py-3 md:px-10 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-white hover:text-gray-900 transition duration-500">
-                    Konum Al
-                </a>
-            </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden px-5 pb-6" hidden>
+            <a href="index.html" aria-current="page">Ana Sayfa <span aria-hidden="true">→</span></a>
+            <a href="urunler.html">Menü <span aria-hidden="true">→</span></a>
+            <a href="iletisim.html">İletişim <span aria-hidden="true">→</span></a>
+            <a href="#siparis-platformlari" class="btn btn-primary w-full">Sipariş Ver</a>
         </div>
     </header>
 
-    <section class="py-16 md:py-24 px-6 bg-white relative">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-sm font-bold text-red-600 uppercase tracking-widest mb-4">Mirasımız</h2>
-            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Emeğimiz, Bizim En Büyük Sırrımız</h3>
-            <p class="text-gray-500 text-base md:text-lg leading-relaxed mb-12 italic">
-                "Bizde mantı makineden çıkmaz, el emeğinden doğar. Gözleme saçta değil, gönülde pişer. Gadasını aldığım,
-                gerçek lezzet için doğru yerdesin."
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-12 text-center">
-                <div>
-                    <div class="text-4xl mb-4">🥟</div>
-                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Taze Açım</h4>
-                    <p class="text-gray-400 text-sm italic">Her gün taze yufka</p>
-                </div>
-                <div>
-                    <div class="text-4xl mb-4">🔥</div>
-                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Sıcak Sunum</h4>
-                    <p class="text-gray-400 text-sm italic">Dumanı üstünde</p>
-                </div>
-                <div>
-                    <div class="text-4xl mb-4">❤️</div>
-                    <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Aile Sıcaklığı</h4>
-                    <p class="text-gray-400 text-sm italic">Güler yüzlü hizmet</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main>
+        <!-- Giriş -->
+        <section class="relative isolate overflow-hidden bg-ink">
+            <img src="assets/main.jpeg" alt="Gadasını Aldığım dükkânı, Yukarı Bahçelievler"
+                class="absolute inset-0 -z-10 h-full w-full object-cover opacity-90" fetchpriority="high">
+            <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/45 to-black/25"></div>
+            <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/50 to-transparent"></div>
 
-    <section class="py-16 md:py-20 px-6 bg-red-50 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-14 md:gap-12">
-            <div class="w-full md:w-1/2 relative">
-                <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-200 rounded-full opacity-50 blur-2xl"></div>
-                <img src="/assets/main2.jpg"
-                    class="rounded-[2rem] shadow-2xl relative z-10 w-full h-72 md:h-[400px] object-cover border-4 md:border-8 border-white"
-                    alt="Kadın Girişimci Hikayesi">
-                <div class="absolute -bottom-6 right-2 md:-right-6 bg-white p-4 md:p-6 rounded-2xl shadow-xl z-20 max-w-[70%]">
-                    <span class="text-3xl">👩‍🍳</span>
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-tighter mt-2">Kadın Girişimci</p>
-                    <p class="text-red-600 font-bold text-lg leading-none italic">Yüzde Yüz Emek</p>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 text-left">
-                <h2 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Bizim Hikayemiz</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">Bir Kadın Girişimcinin <br><span
-                        class="text-red-600">Lezzet Yolculuğu</span></h3>
-                <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
-                    Gadasını Aldığım, sadece bir dükkan değil; bir kadının hayallerini, mutfaktaki tecrübesini ve
-                    Anadolu'nun misafirperverliğini sofralara taşıma çabasıdır.
-                </p>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-start gap-4">
-                        <span class="text-red-600 text-xl font-bold">✓</span>
-                        <p class="text-gray-700"><strong>Yerel Üretim:</strong> Kadın emeğini ve yerel malzemeyi
-                            önceliklendiriyoruz.</p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span class="text-red-600 text-xl font-bold">✓</span>
-                        <p class="text-gray-700"><strong>Geleneksel Yöntem:</strong> Ninelerimizden öğrendiğimiz
-                            usullerle, hiçbir katkı maddesi kullanmadan üretiyoruz.</p>
-                    </div>
-                </div>
-                <p class="handwritten text-2xl text-red-600">"Hayallerimizi emekle harmanladık."</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 md:py-20 bg-stone-50 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-                <div class="text-left md:w-1/2">
-                    <h2 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Sosyal Medyada Biz</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Mutfaktaki Her Anı <br><span
-                            class="text-red-500">Instagram'da Paylaşıyoruz</span></h3>
-                    <p class="text-gray-600 text-base md:text-lg mb-8 leading-relaxed">
-                        En yeni ürünlerimizi, günlük çıkan taze tepsi mantılarımızı ve dükkanımızdan sıcak kareleri
-                        kaçırmamak için bizi takip edin.
+            <div
+                class="mx-auto max-w-6xl px-5 md:px-8 min-h-[calc(100svh-4rem)] md:min-h-[620px] md:h-[calc(100vh-72px)] md:max-h-[860px] flex flex-col justify-end pt-24 pb-8 md:pb-12">
+                <div class="max-w-3xl">
+                    <p class="eyebrow text-coral flex items-center gap-3">
+                        <span class="rule"></span> Ankara · Yukarı Bahçelievler
                     </p>
-                    <a href="https://instagram.com/gadasini_aldigim_manti" target="_blank"
-                        class="inline-flex max-w-full items-center justify-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-6 md:px-8 py-4 rounded-full font-bold text-sm md:text-base shadow-xl hover:scale-105 transition transform">
-                        <span class="break-all">Takip Et @gadasini_aldigim_manti</span>
+                    <h1 class="font-display text-white text-[2.6rem] leading-[1.04] sm:text-6xl md:text-7xl mt-5">
+                        Gadasını aldığım,<br><em class="italic text-coral font-normal">hoş geldin.</em>
+                    </h1>
+                    <p class="mt-6 max-w-xl text-white/80 text-base md:text-lg leading-relaxed">
+                        Kayseri'nin bereketli mutfağını Ankara'nın kalbine taşıdık. Hamurumuz her sabah elde açılır.
+                    </p>
+                    <p class="mt-3 text-white/80 text-base md:text-lg h-[1.75em] whitespace-nowrap" aria-live="off">
+                        Bugün tezgâhta taze <span id="typewriter"
+                            class="caret font-semibold text-coral">mantı</span>
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                        <a href="urunler.html" class="btn btn-light">
+                            Menüyü İncele <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+                        <a href="#siparis-platformlari" class="btn btn-outline-light">Online Sipariş</a>
+                    </div>
+                </div>
+
+                <dl
+                    class="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 border-t border-white/15 pt-6 text-sm text-white/70">
+                    <div class="flex sm:block gap-2">
+                        <dt class="eyebrow text-white/45 sm:mb-1.5">Açık</dt>
+                        <dd class="text-white">Her gün 09:00 – 21:30</dd>
+                    </div>
+                    <div class="flex sm:block gap-2">
+                        <dt class="eyebrow text-white/45 sm:mb-1.5">Adres</dt>
+                        <dd class="text-white">Oğuzhan Asiltürk Cd. 9/E, Çankaya</dd>
+                    </div>
+                    <div class="flex sm:block gap-2">
+                        <dt class="eyebrow text-white/45 sm:mb-1.5">Telefon</dt>
+                        <dd><a href="tel:+905539779793" class="text-white hover:text-coral transition">+90 553 977 97
+                                93</a></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- Değerler -->
+        <section class="py-20 md:py-28">
+            <div class="mx-auto max-w-6xl px-5 md:px-8">
+                <div class="grid md:grid-cols-12 gap-10 md:gap-12">
+                    <div class="md:col-span-5 reveal">
+                        <p class="eyebrow text-brand">Mirasımız</p>
+                        <h2 class="font-display text-4xl md:text-5xl leading-tight mt-4">Emeğimiz, bizim en büyük
+                            sırrımız.</h2>
+                    </div>
+                    <div class="md:col-span-7 md:pt-10 reveal">
+                        <p class="font-display italic text-xl md:text-2xl leading-relaxed text-ink/80">
+                            “Bizde mantı makineden çıkmaz, el emeğinden doğar. Gözleme saçta değil, gönülde pişer.
+                            Gadasını aldığım, gerçek lezzet için doğru yerdesin.”
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 md:mt-20 grid sm:grid-cols-3 border-t border-line">
+                    <div class="reveal py-8 sm:pr-8 sm:border-r border-line border-b sm:border-b-0">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4 15c2-3 5-4 8-4s6 1 8 4M4 15c0 2.5 3.6 4.5 8 4.5s8-2 8-4.5M12 11V4m0 0-2 2m2-2 2 2" />
+                        </svg>
+                        <h3 class="font-display text-2xl mt-5">Taze açım</h3>
+                        <p class="text-muted mt-2 leading-relaxed">Her gün taze yufka. Hamurumuz makinede değil,
+                            elde açılır.</p>
+                    </div>
+                    <div class="reveal py-8 sm:px-8 sm:border-r border-line border-b sm:border-b-0">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 21c4 0 7-2.7 7-6.5 0-3.5-2.5-5.5-3.5-8.5-1.5 2-2.5 3-3.5 3 0-2-1-4.5-3-6 0 4-4 6.5-4 11.5C5 18.3 8 21 12 21Z" />
+                        </svg>
+                        <h3 class="font-display text-2xl mt-5">Sıcak sunum</h3>
+                        <p class="text-muted mt-2 leading-relaxed">Lezzetlerimiz dumanı üstünde, sıcacık
+                            servis edilir.</p>
+                    </div>
+                    <div class="reveal py-8 sm:pl-8">
+                        <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" />
+                        </svg>
+                        <h3 class="font-display text-2xl mt-5">Aile sıcaklığı</h3>
+                        <p class="text-muted mt-2 leading-relaxed">Güler yüzlü hizmet ve yemek sonrası közde
+                            demlenmiş çay ikramımızla.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hikaye -->
+        <section class="bg-paper border-y border-line py-20 md:py-28 overflow-hidden">
+            <div class="mx-auto max-w-6xl px-5 md:px-8 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+                <div class="relative reveal">
+                    <div class="aspect-[4/5] rounded-[1.75rem] overflow-hidden">
+                        <img src="assets/main2.jpg" alt="Mutfakta el açması hamur hazırlığı"
+                            class="h-full w-full object-cover" loading="lazy">
+                    </div>
+                    <div
+                        class="absolute -bottom-6 right-4 md:-right-8 bg-ink text-white rounded-2xl px-6 py-5 shadow-2xl max-w-[16rem]">
+                        <p class="eyebrow text-coral">Kadın girişimci</p>
+                        <p class="font-display text-2xl mt-2 leading-tight">Yüzde yüz emek.</p>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <p class="eyebrow text-brand">Bizim hikayemiz</p>
+                    <h2 class="font-display text-4xl md:text-5xl leading-tight mt-4">Bir kadın girişimcinin
+                        <em class="italic text-brand">lezzet yolculuğu</em></h2>
+                    <p class="text-muted text-lg leading-relaxed mt-6">
+                        Gadasını Aldığım, sadece bir dükkân değil; bir kadının hayallerini, mutfaktaki tecrübesini ve
+                        Anadolu'nun misafirperverliğini sofralara taşıma çabasıdır.
+                    </p>
+                    <ul class="mt-8 space-y-5">
+                        <li class="flex gap-4">
+                            <span
+                                class="mt-0.5 flex h-7 w-7 flex-none items-center justify-center rounded-full bg-brand-soft text-brand">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2"
+                                    viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7" />
+                                </svg>
+                            </span>
+                            <p class="text-ink/80"><strong class="font-semibold text-ink">Yerel üretim.</strong> Kadın
+                                emeğini ve yerel malzemeyi önceliklendiriyoruz.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span
+                                class="mt-0.5 flex h-7 w-7 flex-none items-center justify-center rounded-full bg-brand-soft text-brand">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2"
+                                    viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7" />
+                                </svg>
+                            </span>
+                            <p class="text-ink/80"><strong class="font-semibold text-ink">Geleneksel yöntem.</strong>
+                                Ninelerimizden öğrendiğimiz usullerle, hiçbir katkı maddesi kullanmadan üretiyoruz.</p>
+                        </li>
+                    </ul>
+                    <p class="font-display italic text-2xl text-brand mt-10">“Hayallerimizi emekle harmanladık.”</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- İmza lezzetler -->
+        <section class="py-20 md:py-28">
+            <div class="mx-auto max-w-6xl px-5 md:px-8">
+                <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-14 reveal">
+                    <div>
+                        <p class="eyebrow text-brand">İmza lezzetler</p>
+                        <h2 class="font-display text-4xl md:text-5xl leading-tight mt-4">Sofranın yıldızları</h2>
+                    </div>
+                    <a href="urunler.html" class="link-arrow">Tüm menüyü gör <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <a href="urunler.html#mantilar"
+                        class="group reveal relative block aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-ink">
+                        <img src="assets/yemeksepeti/kayseri-manti.jpg" alt="Kayseri mantısı"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-[1.2s] group-hover:scale-105"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                            <p class="eyebrow text-coral">Geleneksel</p>
+                            <h3 class="font-display text-3xl mt-2">Mantı</h3>
+                            <p class="text-sm text-white/75 mt-2 leading-relaxed">Kayseri'nin o meşhur dokusunu her
+                                lokmada hisset.</p>
+                        </div>
+                    </a>
+                    <a href="urunler.html#gozlemeler"
+                        class="group reveal relative block aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-ink">
+                        <img src="assets/yemeksepeti/gozleme.jpg" alt="Gözleme"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-[1.2s] group-hover:scale-105"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                            <p class="eyebrow text-coral">Çıtır çıtır</p>
+                            <h3 class="font-display text-3xl mt-2">Gözlemeler</h3>
+                            <p class="text-sm text-white/75 mt-2 leading-relaxed">İç harcı bol, dışı altın sarısı el
+                                emeği lezzetler.</p>
+                        </div>
+                    </a>
+                    <a href="urunler.html#yaglama"
+                        class="group reveal relative block aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-ink">
+                        <img src="assets/yemeksepeti/yaglama.jpg" alt="Kayseri yağlaması"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-[1.2s] group-hover:scale-105"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                            <p class="eyebrow text-coral">Kayseri usulü</p>
+                            <h3 class="font-display text-3xl mt-2">Yağlama</h3>
+                            <p class="text-sm text-white/75 mt-2 leading-relaxed">İncecik şebit hamuru, dana kıyma ve
+                                yoğurtla.</p>
+                        </div>
+                    </a>
+                    <a href="urunler.html#baslangiclar"
+                        class="group reveal relative block aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-ink">
+                        <img src="assets/yemeksepeti/sarma.jpg" alt="Zeytinyağlı yaprak sarması"
+                            class="absolute inset-0 h-full w-full object-cover transition duration-[1.2s] group-hover:scale-105"
+                            loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                            <p class="eyebrow text-coral">Zeytinyağlı</p>
+                            <h3 class="font-display text-3xl mt-2">Yaprak Sarması</h3>
+                            <p class="text-sm text-white/75 mt-2 leading-relaxed">Kalem gibi sarılmış, tam kararında
+                                ekşili.</p>
+                        </div>
                     </a>
                 </div>
-                <div class="w-full md:w-1/2 relative">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-200 rounded-full opacity-50 blur-2xl"></div>
-                    <img src="/assets/logo.jpg"
-                        class="rounded-[2rem] shadow-2xl relative z-10 w-full h-72 md:h-[400px] object-cover border-4 md:border-8 border-white"
-                        alt="Logo">
-                    <div class="absolute -bottom-6 right-2 md:-right-6 bg-white p-4 md:p-6 rounded-2xl shadow-xl z-20 max-w-[70%]">
-                        <span class="text-3xl">👩‍🍳</span>
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-tighter mt-2">Her gün</p>
-                        <p class="text-red-600 font-bold text-lg leading-none italic">İştah Açıcı Videolar İçin...</p>
+            </div>
+        </section>
+
+        <!-- Instagram -->
+        <section class="bg-ink text-white py-20 md:py-24 overflow-hidden">
+            <div class="mx-auto max-w-6xl px-5 md:px-8 grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 reveal">
+                    <p class="eyebrow text-coral">Sosyal medyada biz</p>
+                    <h2 class="font-display text-4xl md:text-5xl leading-tight mt-4">Mutfaktaki her anı
+                        <em class="italic text-coral">Instagram'da</em> paylaşıyoruz.</h2>
+                    <p class="text-white/65 text-lg leading-relaxed mt-6 max-w-xl">
+                        Yeni ürünlerimizi, günlük çıkan taze tepsi mantılarımızı ve dükkânımızdan sıcak kareleri
+                        kaçırmamak için bizi takip edin.
+                    </p>
+                    <a href="https://instagram.com/gadasini_aldigim_manti" target="_blank" rel="noopener"
+                        class="btn btn-light mt-8">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <rect x="3" y="3" width="18" height="18" rx="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                        </svg>
+                        @gadasini_aldigim_manti
+                    </a>
+                </div>
+                <div class="md:col-span-5 reveal">
+                    <div class="mx-auto max-w-sm aspect-square rounded-[2rem] overflow-hidden ring-1 ring-white/10">
+                        <img src="assets/logo.jpg" alt="Gadasını Aldığım Mantı & Mutfak logosu"
+                            class="h-full w-full object-cover" loading="lazy">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="pt-16 md:pt-0 pb-16 md:pb-24 px-6 bg-white">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-            <div class="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl h-[380px] md:h-[500px]">
-                <img src="/assets/yemeksepeti/kayseri-manti.jpg"
-                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110" alt="Mantı">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-12">
-                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Geleneksel</h4>
-                    <h3 class="text-white text-3xl md:text-4xl font-bold mb-3 md:mb-4">Mantı</h3>
-                    <p
-                        class="text-gray-300 text-sm md:text-base font-light md:mb-6 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                        Kayseri'nin o meşhur dokusunu her lokmada hisset.</p>
+        <!-- Online sipariş -->
+        <section id="siparis-platformlari" class="py-20 md:py-28">
+            <div class="mx-auto max-w-5xl px-5 md:px-8">
+                <div class="text-center max-w-2xl mx-auto reveal">
+                    <p class="eyebrow text-brand">Online sipariş</p>
+                    <h2 class="font-display text-4xl md:text-5xl leading-tight mt-4">Lezzetimiz kapınıza gelsin</h2>
+                    <p class="text-muted mt-4">Uygulamada arama kısmına <strong class="text-ink">“Gadasını
+                            Aldığım”</strong> yazmanız yeterli.</p>
                 </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl h-[380px] md:h-[500px]">
-                <img src="/assets/yemeksepeti/gozleme.jpg"
-                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110" alt="Gözleme">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-12">
-                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Çıtır Çıtır</h4>
-                    <h3 class="text-white text-3xl md:text-4xl font-bold mb-3 md:mb-4">Gözlemeler</h3>
-                    <p
-                        class="text-gray-300 text-sm md:text-base font-light md:mb-6 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                        İç harcı bol, dışı altın sarısı el emeği lezzetler.</p>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl h-[380px] md:h-[500px]">
-                <img src="/assets/yemeksepeti/yaglama.jpg"
-                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110"
-                    alt="Yaglama">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-12">
-                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Lezzetli</h4>
-                    <h3 class="text-white text-3xl md:text-4xl font-bold mb-3 md:mb-4">Yağlama</h3>
-                    <p
-                        class="text-gray-300 text-sm md:text-base font-light md:mb-6 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                        El açması incecik şebit hamuru üzerine dana kıyma ve özel iç harcımızla hazırlanır, yoğurtla
-                        servis edilir. İsteğe bağlı porsiyonlar hazırlanır.</p>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl h-[380px] md:h-[500px]">
-                <img src="/assets/yemeksepeti/sarma.jpg"
-                    class="w-full h-full object-cover transition duration-[1.5s] group-hover:scale-110"
-                    alt="Yaprak Sarması">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-12">
-                    <h4 class="text-red-500 font-bold tracking-widest text-xs uppercase mb-2">Yumuşacık</h4>
-                    <h3 class="text-white text-3xl md:text-4xl font-bold mb-3 md:mb-4">Yaprak Sarması</h3>
-                    <p
-                        class="text-gray-300 text-sm md:text-base font-light md:mb-6 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                        İncecik asma yaprağına sarılı, bol baharatlı ve tam kararında ekşili, kalem gibi dizilmiş
-                        zeytinyağlı harika.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-16 bg-white border-b border-gray-50 scroll-mt-16" id="siparis-platformlari">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Bize Buralardan da
-                Ulaşabilirsiniz</h2>
-            <div
-                class="flex flex-row items-center justify-center gap-10 md:gap-12 opacity-80 hover:opacity-100 transition duration-500">
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-20 h-20 bg-pink-50 rounded-2xl flex items-center justify-center mb-4 group-hover:shadow-lg transition">
-                        <a href="https://www.yemeksepeti.com/restaurant/suoe/gadasini-aldigim-manti-and-gozleme"
-                            class="text-pink-600 font-bold text-xs">Yemek<br>sepeti</a>
-                    </div>
-                    <p class="text-gray-600 font-semibold text-sm tracking-tight">Yemeksepeti'ndeyiz</p>
+                <div class="mt-12 grid sm:grid-cols-2 gap-5">
+                    <a href="https://www.yemeksepeti.com/restaurant/suoe/gadasini-aldigim-manti-and-gozleme"
+                        target="_blank" rel="noopener"
+                        class="group reveal flex items-center justify-between gap-6 rounded-[1.5rem] border border-line bg-paper p-7 md:p-8 transition hover:border-[#fa0050] hover:shadow-[0_24px_40px_-28px_rgba(250,0,80,.5)]">
+                        <div>
+                            <p class="eyebrow text-muted">Sipariş ver</p>
+                            <p class="font-display text-3xl mt-2 text-[#d6004a]">Yemeksepeti</p>
+                        </div>
+                        <span
+                            class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[#fa0050]/10 text-[#d6004a] transition group-hover:bg-[#fa0050] group-hover:text-white">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="https://www.migros.com.tr/yemek/gadasini-aldigim-manti-gozleme-cankaya-yukari-bahcelievler-mah-st-1c6f1"
+                        target="_blank" rel="noopener"
+                        class="group reveal flex items-center justify-between gap-6 rounded-[1.5rem] border border-line bg-paper p-7 md:p-8 transition hover:border-[#ff7f00] hover:shadow-[0_24px_40px_-28px_rgba(255,127,0,.55)]">
+                        <div>
+                            <p class="eyebrow text-muted">Sipariş ver</p>
+                            <p class="font-display text-3xl mt-2 text-[#d96a00]">Migros Yemek</p>
+                        </div>
+                        <span
+                            class="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-[#ff7f00]/10 text-[#d96a00] transition group-hover:bg-[#ff7f00] group-hover:text-white">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8" />
+                            </svg>
+                        </span>
+                    </a>
                 </div>
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mb-4 group-hover:shadow-lg transition border border-orange-100">
-                        <a href="https://www.migros.com.tr/yemek/gadasini-aldigim-manti-gozleme-cankaya-yukari-bahcelievler-mah-st-1c6f1"
-                            class="text-orange-600 font-bold text-xs uppercase">Migros</a>
-                    </div>
-                    <p class="text-gray-600 font-semibold text-sm tracking-tight">Migros Yemek'teyiz</p>
-                </div>
-            </div>
-            <p class="mt-8 text-gray-400 text-xs italic">Arama kısmına "Gadasını Aldığım" yazmanız yeterli!</p>
-        </div>
-    </section>
 
-    <footer class="bg-stone-900 text-white py-12 md:py-16 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-center md:text-left">
-                <h2 class="handwritten text-3xl md:text-4xl text-red-500 mb-4">Gadasını Aldığım Mantı</h2>
-                <p class="text-gray-500 text-sm max-w-xs mx-auto md:mx-0">Ankara Bahçelievler'de lezzetin ve samimiyetin buluşma
+                <p class="text-center text-muted text-sm mt-8 reveal">
+                    Telefonla sipariş için:
+                    <a href="tel:+905539779793" class="font-semibold text-ink hover:text-brand transition">+90 553 977
+                        97 93</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Alt bilgi -->
+    <footer class="bg-ink text-white/70">
+        <div class="mx-auto max-w-6xl px-5 md:px-8 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="lg:col-span-1">
+                <p class="wordmark-title !text-white">Gadasını Aldığım</p>
+                <p class="font-display italic text-coral mt-2">Mantı &amp; Mutfak</p>
+                <p class="text-sm leading-relaxed mt-5 max-w-xs">Ankara Bahçelievler'de lezzetin ve samimiyetin buluşma
                     noktası.</p>
             </div>
-            <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-                <a href="index.html" class="hover:text-red-500 transition">Ana Sayfa</a>
-                <a href="urunler.html" class="hover:text-red-500 transition">Ürünler</a>
-                <a href="iletisim.html" class="hover:text-red-500 transition">İletişim</a>
+            <div>
+                <p class="eyebrow text-white/40">Sayfalar</p>
+                <ul class="mt-5 space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Ana Sayfa</a></li>
+                    <li><a href="urunler.html" class="hover:text-white transition">Menü</a></li>
+                    <li><a href="iletisim.html" class="hover:text-white transition">İletişim</a></li>
+                    <li><a href="index.html#siparis-platformlari" class="hover:text-white transition">Online
+                            Sipariş</a></li>
+                </ul>
             </div>
-            <div class="text-center md:text-right">
-                <p class="text-xs text-gray-600 uppercase tracking-widest mb-2">© 2026 Gadasını Aldığım</p>
-                <p class="text-[10px] text-gray-700 font-mono tracking-tighter">Handcrafted with passion</p>
+            <div>
+                <p class="eyebrow text-white/40">İletişim</p>
+                <ul class="mt-5 space-y-3 text-sm">
+                    <li><a href="tel:+905539779793" class="hover:text-white transition">+90 553 977 97 93</a></li>
+                    <li><a href="mailto:gadamantici@gmail.com" class="hover:text-white transition">gadamantici@gmail.com</a>
+                    </li>
+                    <li><a href="https://instagram.com/gadasini_aldigim_manti" target="_blank" rel="noopener"
+                            class="hover:text-white transition">@gadasini_aldigim_manti</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="eyebrow text-white/40">Adres &amp; Saatler</p>
+                <p class="mt-5 text-sm leading-relaxed">Yukarı Bahçelievler, Oğuzhan Asiltürk Cd. 9/E<br>06490 Çankaya /
+                    Ankara</p>
+                <p class="mt-3 text-sm">Her gün <span class="text-white">09:00 – 21:30</span></p>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div
+                class="mx-auto max-w-6xl px-5 md:px-8 py-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/40">
+                <p>© 2026 Gadasını Aldığım. Tüm hakları saklıdır.</p>
+                <p>El emeği, göz nuru.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        const textElement = document.getElementById('typewriter');
-        const phrases = ["Mantı", "Gözleme", "Yağlama", "İçli Köfte", "Çiğ Börek"];
-        let phraseIndex = 0, charIndex = 0, isDeleting = false, typeSpeed = 150;
-
-        function typeEffect() {
-            const currentPhrase = phrases[phraseIndex];
-            if (isDeleting) {
-                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 80;
-            } else {
-                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 150;
-            }
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                isDeleting = true;
-                typeSpeed = 2000;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500;
-            }
-            setTimeout(typeEffect, typeSpeed);
-        }
-        document.addEventListener('DOMContentLoaded', typeEffect);
-    </script>
-
-    <script>
-        (function () {
-            var btn = document.getElementById('menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            if (!btn || !menu) return;
-            btn.addEventListener('click', function () {
-                var open = !menu.classList.toggle('hidden');
-                btn.setAttribute('aria-expanded', open);
-            });
-            menu.querySelectorAll('a').forEach(function (a) {
-                a.addEventListener('click', function () {
-                    menu.classList.add('hidden');
-                    btn.setAttribute('aria-expanded', false);
-                });
-            });
-        })();
-    </script>
+    <script src="assets/site.js" defer></script>
 </body>
 
 </html>

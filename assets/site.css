@@ -1,0 +1,511 @@
+/* Gadasını Aldığım — ortak stiller */
+:root {
+    --ink: #16120f;
+    --ink-2: #3a322c;
+    --muted: #6f655d;
+    --line: #e7ded2;
+    --cream: #f7f2ea;
+    --paper: #fffdf9;
+    --brand: #b5532c;
+    --brand-dark: #97421f;
+    --brand-soft: #f6e4d9;
+    --coral: #f0875e;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+}
+
+::selection {
+    background: var(--coral);
+    color: #fff;
+}
+
+/* ---------- Küçük yardımcılar ---------- */
+.eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.rule {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+    vertical-align: middle;
+}
+
+/* ---------- Butonlar ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color .25s, color .25s, border-color .25s, transform .25s;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+.btn-primary {
+    background: var(--brand);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--brand-dark);
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--ink);
+}
+
+.btn-light:hover {
+    background: var(--coral);
+    color: #fff;
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, .45);
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, .1);
+    border-color: #fff;
+}
+
+.btn-outline {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+}
+
+.btn-outline:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+.btn-sm {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+}
+
+.btn .arrow {
+    transition: transform .25s;
+}
+
+.btn:hover .arrow,
+.link-arrow:hover .arrow {
+    transform: translateX(3px);
+}
+
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--brand);
+}
+
+.link-arrow .arrow {
+    transition: transform .25s;
+}
+
+/* ---------- Üst menü ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 242, 234, .88);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.site-header.is-scrolled {
+    border-bottom-color: var(--line);
+    box-shadow: 0 6px 24px -18px rgba(22, 18, 15, .35);
+}
+
+.wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.wordmark-title {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.wordmark-sub {
+    margin-top: .35rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: .85rem;
+    color: var(--brand);
+}
+
+@media (min-width: 768px) {
+    .wordmark-title {
+        font-size: 1.1rem;
+    }
+}
+
+.nav-link {
+    position: relative;
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    padding: .4rem 0;
+    transition: color .2s;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1.5px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+
+.nav-link:hover {
+    color: var(--ink);
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+.nav-link[aria-current="page"] {
+    color: var(--ink);
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    color: var(--ink);
+    transition: background-color .2s;
+}
+
+.icon-btn:hover {
+    background: rgba(22, 18, 15, .06);
+}
+
+.mobile-menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.35rem;
+    color: var(--ink);
+}
+
+.mobile-menu a[aria-current="page"] {
+    color: var(--brand);
+}
+
+.mobile-menu a.btn {
+    margin-top: 1.25rem;
+    border: 0;
+    justify-content: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: .95rem;
+    color: #fff;
+}
+
+/* ---------- Ürün kartları ---------- */
+.dish {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1), box-shadow .4s;
+}
+
+.dish-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--brand-soft);
+}
+
+.dish-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(.2, .7, .2, 1);
+}
+
+.dish-body {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.dish-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--ink);
+}
+
+.dish-desc {
+    margin-top: .35rem;
+    font-size: .82rem;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+@media (min-width: 768px) {
+    .dish-body {
+        padding: 1.25rem 1.4rem 1.5rem;
+    }
+
+    .dish-title {
+        font-size: 1.25rem;
+    }
+
+    .dish-desc {
+        font-size: .9rem;
+    }
+}
+
+@media (hover: hover) {
+    .dish:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 40px -28px rgba(22, 18, 15, .45);
+    }
+
+    .dish:hover .dish-media img {
+        transform: scale(1.06);
+    }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.badge-brand {
+    background: var(--brand);
+    color: #fff;
+}
+
+.badge-soft {
+    background: var(--brand-soft);
+    color: var(--brand-dark);
+}
+
+.badge-glass {
+    background: rgba(255, 253, 249, .92);
+    color: var(--ink);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+/* ---------- Menü sayfası kategori çubuğu ---------- */
+.chipbar {
+    position: sticky;
+    top: 4rem;
+    z-index: 40;
+    background: rgba(247, 242, 234, .92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+    .chipbar {
+        top: 4.5rem;
+    }
+}
+
+.chips {
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chips::-webkit-scrollbar {
+    display: none;
+}
+
+.chip {
+    flex: none;
+    padding: .55rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    transition: all .2s;
+}
+
+.chip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+.chip.is-active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}
+
+.menu-section {
+    /* html scroll-padding (5.5rem) + kategori çubuğu */
+    scroll-margin-top: 3.5rem;
+}
+
+.section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: .75rem 1.5rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.sub-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.25rem;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+.sub-head::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+/* İçecek listesi */
+.menu-list li {
+    display: flex;
+    align-items: baseline;
+    gap: .75rem;
+    padding: .7rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: .95rem;
+}
+
+.menu-list li:last-child {
+    border-bottom: 0;
+}
+
+/* ---------- Görünürken beliren öğeler ---------- */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
+
+/* Yazı makinesi imleci */
+.caret::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: .9em;
+    margin-left: 3px;
+    background: currentColor;
+    vertical-align: -0.08em;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+}

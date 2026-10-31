@@ -1,130 +1,236 @@
 <!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
+<html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim | Gadasını Aldığım</title>
+    <meta name="description"
+        content="Gadasını Aldığım — Yukarı Bahçelievler, Oğuzhan Asiltürk Cd. 9/E, Çankaya / Ankara. Her gün 09:00 – 21:30. Tel: +90 553 977 97 93">
+    <meta name="theme-color" content="#f7f2ea">
+    <link rel="icon" type="image/png" href="assets/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/logo.jpg">
+    <script>document.documentElement.classList.add('js');</script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Montserrat', sans-serif; }
-        .handwritten { font-family: 'Pacifico', cursive; }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#16120f', cream: '#f7f2ea', paper: '#fffdf9', line: '#e7ded2', muted: '#6f655d',
+                        brand: { DEFAULT: '#b5532c', dark: '#97421f', soft: '#f6e4d9' }, coral: '#f0875e'
+                    },
+                    fontFamily: {
+                        display: ['Fraunces', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="bg-[#fcfaf8] text-gray-800">
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 shadow-sm">
-        <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center gap-3">
-            <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 handwritten">Gadasını Aldığım Mantı</a>
-            <div class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest text-gray-500">
-                <a href="index.html" class="hover:text-red-600 transition">Ana Sayfa</a>
-                <a href="urunler.html" class="hover:text-red-600 transition">Lezzetler</a>
-                <a href="iletisim.html" class="text-red-600 border-b-2 border-red-600">İletişim</a>
+<body>
+
+    <!-- Üst menü -->
+    <header class="site-header">
+        <div class="mx-auto max-w-6xl px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between gap-4">
+            <a href="index.html" class="wordmark" aria-label="Gadasını Aldığım — Ana sayfa">
+                <span class="wordmark-title">Gadasını Aldığım</span>
+                <span class="wordmark-sub">Mantı &amp; Mutfak</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-9" aria-label="Ana menü">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="urunler.html" class="nav-link">Menü</a>
+                <a href="iletisim.html" class="nav-link" aria-current="page">İletişim</a>
+            </nav>
+
+            <div class="flex items-center gap-1">
+                <a href="index.html#siparis-platformlari" class="btn btn-primary btn-sm hidden md:inline-flex">Sipariş
+                    Ver</a>
+                <a href="index.html#siparis-platformlari" class="icon-btn md:hidden text-brand" aria-label="Sipariş ver">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L20 8H6.2" />
+                        <circle cx="9" cy="20" r="1.3" />
+                        <circle cx="17" cy="20" r="1.3" />
+                    </svg>
+                </a>
+                <button id="menu-btn" type="button" class="icon-btn md:hidden -mr-2" aria-label="Menüyü aç"
+                    aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" d="M4 8h16M4 16h16" />
+                    </svg>
+                    <svg class="icon-close hidden w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                </button>
             </div>
-            <button id="menu-btn" type="button" class="md:hidden p-2 -mr-2 text-gray-700" aria-label="Menüyü aç"
-                aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
-                </svg>
-            </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-5 font-bold uppercase text-xs tracking-widest text-gray-600">
-            <a href="index.html" class="block py-3 border-b border-gray-100">Ana Sayfa</a>
-            <a href="urunler.html" class="block py-3 border-b border-gray-100">Lezzetler</a>
-            <a href="iletisim.html" class="block py-3 border-b border-gray-100 text-red-600">İletişim</a>
-            <a href="index.html#siparis-platformlari"
-                class="block mt-4 text-center bg-red-600 text-white py-3 rounded-full shadow-md">Sipariş Ver</a>
+        <div id="mobile-menu" class="mobile-menu md:hidden px-5 pb-6" hidden>
+            <a href="index.html">Ana Sayfa <span aria-hidden="true">→</span></a>
+            <a href="urunler.html">Menü <span aria-hidden="true">→</span></a>
+            <a href="iletisim.html" aria-current="page">İletişim <span aria-hidden="true">→</span></a>
+            <a href="index.html#siparis-platformlari" class="btn btn-primary w-full">Sipariş Ver</a>
         </div>
-    </nav>
-
-    <header class="pt-28 md:pt-32 pb-12 md:pb-16 bg-white text-center">
-        <span class="text-red-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 inline-block">Ankara Bahçelievler</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Bize <span class="handwritten text-red-500">Ulaşın</span></h1>
-        <p class="max-w-xl mx-auto text-gray-500 font-light px-6 italic leading-relaxed">"Gadasını aldığım, kapımız herkese açık. İster bir çayımızı içmeye, ister o meşhur mantımızı yemeye bekleriz."</p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-12">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14 md:mb-20">
-            
-            <div class="contact-card bg-white p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-50 text-center transition-all duration-300">
-                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">📞</div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2 uppercase tracking-tight">Bizi Arayın</h3>
-                <a href="tel:+905539779793" class="block text-red-600 text-xl font-bold mb-1">+90 553 977 97 93</a>
-                <p class="text-[10px] text-gray-400 font-semibold tracking-widest uppercase">Haftanın Her Günü: 09:00 - 21:30</p>
+    <!-- Sayfa başlığı -->
+    <section class="mx-auto max-w-6xl px-5 md:px-8 pt-14 md:pt-20 pb-10 md:pb-14">
+        <div class="grid md:grid-cols-12 gap-6 items-end">
+            <div class="md:col-span-7">
+                <p class="eyebrow text-brand flex items-center gap-3"><span class="rule"></span> Ankara Bahçelievler</p>
+                <h1 class="font-display text-5xl md:text-7xl leading-[1.02] mt-5">Bize <em
+                        class="italic text-brand">ulaşın</em></h1>
             </div>
-
-            <div class="contact-card bg-white p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-50 text-center transition-all duration-300">
-                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">📍</div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2 uppercase tracking-tight">Adresimiz</h3>
-                <p class="text-gray-600 text-sm font-medium leading-relaxed italic">Yukarı Bahçelievler, Oğuzhan Asiltürk Cd. 9/E<br>06490 Çankaya / Ankara</p>
-            </div>
-
-            <div class="contact-card bg-white p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-100 text-center transition-all duration-300">
-                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">✨</div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2 uppercase tracking-tight">Dijital Şube</h3>
-                <a href="mailto:gadamantici@gmail.com" class="block text-gray-600 text-sm font-bold mb-1 break-all">gadamantici@gmail.com</a>
-                <p class="text-[10px] text-gray-400 font-semibold tracking-widest uppercase break-all">Instagram: @gadasini_aldigim_manti</p>
-            </div>
-
+            <p class="md:col-span-5 font-display italic text-xl text-ink/75 leading-relaxed">
+                “Gadasını aldığım, kapımız herkese açık. İster bir çayımızı içmeye, ister o meşhur mantımızı yemeye
+                bekleriz.”
+            </p>
         </div>
+    </section>
 
-        <div class="relative group">
-            <div class="absolute -inset-2 bg-gradient-to-r from-red-100 to-orange-100 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-            <div class="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white h-80 md:h-[500px]">
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.8105786015565!2d32.82470507655079!3d39.92323388554902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f5292171edb%3A0xb0a386727e3389d5!2sGADASINI%20ALDI%C4%9EIM%20MANTI%20%26%20YA%C4%9ELAMA%20%26G%C3%96ZLEME!5e0!3m2!1str!2str!4v1709841234567!5m2!1str!2str" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+    <main class="mx-auto max-w-6xl px-5 md:px-8 pb-20 md:pb-28">
+        <div class="grid lg:grid-cols-12 gap-6">
+
+            <!-- Bilgiler -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <div class="reveal rounded-[1.5rem] border border-line bg-paper divide-y divide-line">
+                    <a href="tel:+905539779793" class="group flex items-start gap-5 p-6 md:p-7">
+                        <span
+                            class="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-brand-soft text-brand">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5 4h3l1.5 4.5-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2L20 16v3a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z" />
+                            </svg>
+                        </span>
+                        <span class="flex-1">
+                            <span class="eyebrow text-muted block">Telefon</span>
+                            <span
+                                class="font-display text-2xl mt-1 block group-hover:text-brand transition">+90 553 977 97
+                                93</span>
+                        </span>
+                    </a>
+
+                    <div class="flex items-start gap-5 p-6 md:p-7">
+                        <span
+                            class="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-brand-soft text-brand">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" />
+                                <circle cx="12" cy="9.5" r="2.5" />
+                            </svg>
+                        </span>
+                        <div class="flex-1">
+                            <p class="eyebrow text-muted">Adres</p>
+                            <p class="mt-1 text-ink leading-relaxed">Yukarı Bahçelievler, Oğuzhan Asiltürk Cd.
+                                9/E<br>06490 Çankaya / Ankara</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=GADASINI+ALDI%C4%9EIM+MANTI+Bah%C3%A7elievler+Ankara"
+                                target="_blank" rel="noopener" class="link-arrow mt-3">Yol tarifi al <span
+                                    class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-5 p-6 md:p-7">
+                        <span
+                            class="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-brand-soft text-brand">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6" />
+                            </svg>
+                        </span>
+                        <div class="flex-1 min-w-0">
+                            <p class="eyebrow text-muted">E-posta &amp; sosyal medya</p>
+                            <a href="mailto:gadamantici@gmail.com"
+                                class="mt-1 block text-ink hover:text-brand transition break-all">gadamantici@gmail.com</a>
+                            <a href="https://instagram.com/gadasini_aldigim_manti" target="_blank" rel="noopener"
+                                class="mt-1 block text-ink hover:text-brand transition break-all">@gadasini_aldigim_manti</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal rounded-[1.5rem] bg-ink text-white p-6 md:p-7">
+                    <p class="eyebrow text-coral">Çalışma saatleri</p>
+                    <div class="mt-4 flex items-baseline justify-between gap-4">
+                        <span class="text-white/70">Haftanın her günü</span>
+                        <span class="font-display text-2xl">09:00 – 21:30</span>
+                    </div>
+                    <a href="index.html#siparis-platformlari" class="btn btn-light w-full mt-6">Online Sipariş Ver <span
+                            class="arrow" aria-hidden="true">→</span></a>
+                </div>
+            </div>
+
+            <!-- Harita -->
+            <div class="lg:col-span-7 reveal">
+                <div
+                    class="h-[360px] md:h-[460px] lg:h-full lg:min-h-[520px] overflow-hidden rounded-[1.5rem] border border-line bg-paper">
+                    <iframe title="Gadasını Aldığım konumu — Google Haritalar" class="h-full w-full" style="border:0"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.8105786015565!2d32.82470507655079!3d39.92323388554902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f5292171edb%3A0xb0a386727e3389d5!2sGADASINI%20ALDI%C4%9EIM%20MANTI%20%26%20YA%C4%9ELAMA%20%26G%C3%96ZLEME!5e0!3m2!1str!2str!4v1709841234567!5m2!1str!2str"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-12 md:py-16 px-6 mt-16 md:mt-24">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <h2 class="handwritten text-3xl text-red-500 mb-2">Gadasını Aldığım Mantı</h2>
-                <p class="text-gray-500 text-[10px] tracking-widest uppercase font-bold">Mantı & Yağlama & Gözleme</p>
+    <!-- Alt bilgi -->
+    <footer class="bg-ink text-white/70">
+        <div class="mx-auto max-w-6xl px-5 md:px-8 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+                <p class="wordmark-title !text-white">Gadasını Aldığım</p>
+                <p class="font-display italic text-coral mt-2">Mantı &amp; Mutfak</p>
+                <p class="text-sm leading-relaxed mt-5 max-w-xs">Ankara Bahçelievler'de lezzetin ve samimiyetin buluşma
+                    noktası.</p>
             </div>
-            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
-                <a href="index.html" class="hover:text-white transition">Ana Sayfa</a>
-                <a href="urunler.html" class="hover:text-white transition">Ürünler</a>
-                <a href="iletisim.html" class="hover:text-white transition">İletişim</a>
+            <div>
+                <p class="eyebrow text-white/40">Sayfalar</p>
+                <ul class="mt-5 space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Ana Sayfa</a></li>
+                    <li><a href="urunler.html" class="hover:text-white transition">Menü</a></li>
+                    <li><a href="iletisim.html" class="hover:text-white transition">İletişim</a></li>
+                    <li><a href="index.html#siparis-platformlari" class="hover:text-white transition">Online
+                            Sipariş</a></li>
+                </ul>
             </div>
-            <p class="text-[10px] text-gray-600 text-center">© 2026 Gadasını Aldığım. El Emeği Mutluluk.</p>
+            <div>
+                <p class="eyebrow text-white/40">İletişim</p>
+                <ul class="mt-5 space-y-3 text-sm">
+                    <li><a href="tel:+905539779793" class="hover:text-white transition">+90 553 977 97 93</a></li>
+                    <li><a href="mailto:gadamantici@gmail.com" class="hover:text-white transition">gadamantici@gmail.com</a>
+                    </li>
+                    <li><a href="https://instagram.com/gadasini_aldigim_manti" target="_blank" rel="noopener"
+                            class="hover:text-white transition">@gadasini_aldigim_manti</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="eyebrow text-white/40">Adres &amp; Saatler</p>
+                <p class="mt-5 text-sm leading-relaxed">Yukarı Bahçelievler, Oğuzhan Asiltürk Cd. 9/E<br>06490 Çankaya /
+                    Ankara</p>
+                <p class="mt-3 text-sm">Her gün <span class="text-white">09:00 – 21:30</span></p>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div
+                class="mx-auto max-w-6xl px-5 md:px-8 py-6 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/40">
+                <p>© 2026 Gadasını Aldığım. Tüm hakları saklıdır.</p>
+                <p>El emeği, göz nuru.</p>
+            </div>
         </div>
     </footer>
 
-
-    <script>
-        (function () {
-            var btn = document.getElementById('menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            if (!btn || !menu) return;
-            btn.addEventListener('click', function () {
-                var open = !menu.classList.toggle('hidden');
-                btn.setAttribute('aria-expanded', open);
-            });
-            menu.querySelectorAll('a').forEach(function (a) {
-                a.addEventListener('click', function () {
-                    menu.classList.add('hidden');
-                    btn.setAttribute('aria-expanded', false);
-                });
-            });
-        })();
-    </script>
+    <script src="assets/site.js" defer></script>
 </body>
-</html> 
+
+</html>
