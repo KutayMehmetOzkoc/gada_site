@@ -441,6 +441,28 @@ body {
     background: var(--line);
 }
 
+/* Ev yapımı içecek kartları (çizim) */
+.drink-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 50% 55%, rgba(255, 255, 255, .7), transparent 60%),
+        var(--tint);
+}
+
+.drink-art {
+    width: 82%;
+    height: 82%;
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (hover: hover) {
+    .drink:hover .drink-art {
+        transform: translateY(-4px) rotate(-2deg);
+    }
+}
+
 /* İçecek listesi */
 .menu-list li {
     display: flex;
