@@ -22,51 +22,64 @@
 <body class="bg-[#fcfaf8] text-gray-800">
 
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl md:text-3xl font-bold text-red-600 handwritten">Gadasını Aldığım Mantı</a>
+        <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center gap-3">
+            <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 handwritten">Gadasını Aldığım Mantı</a>
             <div class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest text-gray-500">
                 <a href="index.html" class="hover:text-red-600 transition">Ana Sayfa</a>
                 <a href="urunler.html" class="hover:text-red-600 transition">Lezzetler</a>
                 <a href="iletisim.html" class="text-red-600 border-b-2 border-red-600">İletişim</a>
             </div>
+            <button id="menu-btn" type="button" class="md:hidden p-2 -mr-2 text-gray-700" aria-label="Menüyü aç"
+                aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-5 font-bold uppercase text-xs tracking-widest text-gray-600">
+            <a href="index.html" class="block py-3 border-b border-gray-100">Ana Sayfa</a>
+            <a href="urunler.html" class="block py-3 border-b border-gray-100">Lezzetler</a>
+            <a href="iletisim.html" class="block py-3 border-b border-gray-100 text-red-600">İletişim</a>
+            <a href="index.html#siparis-platformlari"
+                class="block mt-4 text-center bg-red-600 text-white py-3 rounded-full shadow-md">Sipariş Ver</a>
         </div>
     </nav>
 
-    <header class="pt-32 pb-16 bg-white text-center">
+    <header class="pt-28 md:pt-32 pb-12 md:pb-16 bg-white text-center">
         <span class="text-red-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 inline-block">Ankara Bahçelievler</span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Bize <span class="handwritten text-red-500">Ulaşın</span></h1>
         <p class="max-w-xl mx-auto text-gray-500 font-light px-6 italic leading-relaxed">"Gadasını aldığım, kapımız herkese açık. İster bir çayımızı içmeye, ister o meşhur mantımızı yemeye bekleriz."</p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-12">
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14 md:mb-20">
             
-            <div class="contact-card bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-50 text-center transition-all duration-300">
+            <div class="contact-card bg-white p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-50 text-center transition-all duration-300">
                 <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">📞</div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2 uppercase tracking-tight">Bizi Arayın</h3>
-                <p class="text-red-600 text-xl font-bold mb-1">+90 553 977 97 93</p>
+                <a href="tel:+905539779793" class="block text-red-600 text-xl font-bold mb-1">+90 553 977 97 93</a>
                 <p class="text-[10px] text-gray-400 font-semibold tracking-widest uppercase">Haftanın Her Günü: 09:00 - 21:30</p>
             </div>
 
-            <div class="contact-card bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-50 text-center transition-all duration-300">
+            <div class="contact-card bg-white p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-50 text-center transition-all duration-300">
                 <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">📍</div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2 uppercase tracking-tight">Adresimiz</h3>
                 <p class="text-gray-600 text-sm font-medium leading-relaxed italic">Yukarı Bahçelievler, Oğuzhan Asiltürk Cd. 9/E<br>06490 Çankaya / Ankara</p>
             </div>
 
-            <div class="contact-card bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 text-center transition-all duration-300">
+            <div class="contact-card bg-white p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-100 text-center transition-all duration-300">
                 <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">✨</div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2 uppercase tracking-tight">Dijital Şube</h3>
-                <p class="text-gray-600 text-sm font-bold mb-1">gadamantici@gmail.com</p>
-                <p class="text-[10px] text-gray-400 font-semibold tracking-widest uppercase">Instagram: @gadasini_aldigim_manti</p>
+                <a href="mailto:gadamantici@gmail.com" class="block text-gray-600 text-sm font-bold mb-1 break-all">gadamantici@gmail.com</a>
+                <p class="text-[10px] text-gray-400 font-semibold tracking-widest uppercase break-all">Instagram: @gadasini_aldigim_manti</p>
             </div>
 
         </div>
 
         <div class="relative group">
             <div class="absolute -inset-2 bg-gradient-to-r from-red-100 to-orange-100 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-            <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white h-[500px]">
+            <div class="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white h-80 md:h-[500px]">
                 <iframe 
                     width="100%" 
                     height="100%" 
@@ -80,20 +93,38 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-16 px-6 mt-24">
+    <footer class="bg-gray-900 text-white py-12 md:py-16 px-6 mt-16 md:mt-24">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-center md:text-left">
                 <h2 class="handwritten text-3xl text-red-500 mb-2">Gadasını Aldığım Mantı</h2>
                 <p class="text-gray-500 text-[10px] tracking-widest uppercase font-bold">Mantı & Yağlama & Gözleme</p>
             </div>
-            <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
                 <a href="index.html" class="hover:text-white transition">Ana Sayfa</a>
                 <a href="urunler.html" class="hover:text-white transition">Ürünler</a>
                 <a href="iletisim.html" class="hover:text-white transition">İletişim</a>
             </div>
-            <p class="text-[10px] text-gray-600">© 2026 Gadasını Aldığım. El Emeği Mutluluk.</p>
+            <p class="text-[10px] text-gray-600 text-center">© 2026 Gadasını Aldığım. El Emeği Mutluluk.</p>
         </div>
     </footer>
 
+
+    <script>
+        (function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function () {
+                var open = !menu.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', open);
+            });
+            menu.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', false);
+                });
+            });
+        })();
+    </script>
 </body>
 </html> 

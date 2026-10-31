@@ -22,8 +22,10 @@
             backdrop-filter: blur(10px);
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
+        @media (hover: hover) {
+            .product-card:hover {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
@@ -31,18 +33,31 @@
 <body class="bg-[#fcfaf8] text-gray-800">
 
     <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl md:text-3xl font-bold text-red-600 handwritten">Gadasını Aldığım
+        <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center gap-3">
+            <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 handwritten">Gadasını Aldığım
                 Mantı</a>
             <div class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest text-gray-500">
                 <a href="index.html" class="hover:text-red-600 transition">Ana Sayfa</a>
                 <a href="urunler.html" class="text-red-600 border-b-2 border-red-600">Lezzetler</a>
                 <a href="iletisim.html" class="hover:text-red-600 transition">İletişim</a>
             </div>
+            <button id="menu-btn" type="button" class="md:hidden p-2 -mr-2 text-gray-700" aria-label="Menüyü aç"
+                aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-5 font-bold uppercase text-xs tracking-widest text-gray-600">
+            <a href="index.html" class="block py-3 border-b border-gray-100">Ana Sayfa</a>
+            <a href="urunler.html" class="block py-3 border-b border-gray-100 text-red-600">Lezzetler</a>
+            <a href="iletisim.html" class="block py-3 border-b border-gray-100">İletişim</a>
+            <a href="index.html#siparis-platformlari"
+                class="block mt-4 text-center bg-red-600 text-white py-3 rounded-full shadow-md">Sipariş Ver</a>
         </div>
     </nav>
 
-    <header class="pt-32 pb-16 bg-white text-center">
+    <header class="pt-28 md:pt-32 pb-12 md:pb-16 bg-white text-center">
         <span class="text-red-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 inline-block">Geleneksel Anadolu
             Mutfağı</span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Lezzet <span
@@ -51,187 +66,187 @@
             hazırladığımız ev yapımı tatlar.</p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-12">
 
-        <section class="mb-24">
-            <div class="flex items-center justify-between mb-10 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-24">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 md:mb-10 border-b border-gray-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span class="w-2 h-8 bg-emerald-500 rounded-full"></span> Gadasından İkramlar
                 </h2>
                 <span
                     class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">Mevsimsel
                     Olarak Değişmektedir.</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/ikramlar/mevsimsel-salata.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Mevsim Salatası">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Mevsim Salatası</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Mevsim Salatası</h4>
                         <p class="text-gray-400 text-xs italic">Taptaze sebzelerle</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/ikramlar/tursu.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Turşu">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Ev Yapımı Turşu</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Ev Yapımı Turşu</h4>
                         <p class="text-gray-400 text-xs italic">Kıtır kıtır lezzet</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/ikramlar/cigköfte.webp"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Çiğ Köfte">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Çiğ Köfte</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Çiğ Köfte</h4>
                         <p class="text-gray-400 text-xs italic">El Yapımı Lezzet</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-24">
-            <div class="flex items-center justify-between mb-10 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-24">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 md:mb-10 border-b border-gray-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span class="w-2 h-8 bg-red-500 rounded-full"></span> Sıcak Başlangıçlar ve Tava Lezzetleri
                 </h2>
                 <span
                     class="text-[10px] font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Yanına
                     İyi Gider.</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/yemeksepeti/mercimek-corbasi.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Çorba">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Günün Çorbası</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Günün Çorbası</h4>
                         <p class="text-gray-400 text-xs italic">İçinizi ısıtacak lezzet.</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/yemeksepeti/icli-kofte.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="İçli Köfte">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">İçli Köfte</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">İçli Köfte</h4>
                         <p class="text-gray-400 text-xs italic">Bol cevizli lezzet şöleni</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/yemeksepeti/ci-borek.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Çi Börek">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Çi Börek</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Çi Börek</h4>
                         <p class="text-gray-400 text-xs italic">Bir tane yetmez!</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/yemeksepeti/sarma.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Sarma">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Zeytinyağlı Sarma</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Zeytinyağlı Sarma</h4>
                         <p class="text-gray-400 text-xs italic">Anne elinden.</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/baslangiclar/sigarabörek.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Sigara Böreği">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Sigara Böreği</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Sigara Böreği</h4>
                         <p class="text-gray-400 text-xs italic">Dışı çıtır, içi yumuşacık.</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/baslangiclar/menemen.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Menemen">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Menemen</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Menemen</h4>
                         <p class="text-gray-400 text-xs italic">Bir Türk klasiği</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/baslangiclar/pisi.webp"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Pişi">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Pişi</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Pişi</h4>
                         <p class="text-gray-400 text-xs italic">Puf puf mutluluk.</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/yemeksepeti/patates-kizartmasi.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Patates Kızartması">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Patates Kızartması</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Patates Kızartması</h4>
                         <p class="text-gray-400 text-xs italic">Çıtır çıtır lezzet</p>
                     </div>
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-36 sm:h-48 overflow-hidden">
                         <img src="/assets/baslangiclar/sucukici.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Sucuk İçi">
                     </div>
-                    <div class="p-6 text-center">
-                        <h4 class="font-bold text-lg mb-1">Sucuk İçi Tava</h4>
+                    <div class="p-4 md:p-6 text-center">
+                        <h4 class="font-bold text-sm md:text-lg mb-1">Sucuk İçi Tava</h4>
                         <p class="text-gray-400 text-xs italic">Yöresel Lezzet</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-20">
-            <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-20">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 border-b border-gray-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span class="w-2 h-8 bg-red-600 rounded-full"></span> Kayseri Yağlaması
                 </h2>
                 <span class="text-[10px] font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full uppercase">Özel
                     Lezzet</span>
             </div>
             <div
-                class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-8 items-center">
+                class="bg-white rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-8 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-6 md:gap-8 items-center">
                 <img src="/assets/yemeksepeti/yaglama.jpg" class="w-full md:w-80 h-64 object-cover rounded-[2rem] shadow-lg"
                     alt="Kayseri Yağlaması">
                 <div class="flex-1">
@@ -242,23 +257,23 @@
             </div>
         </section>
 
-        <section class="mb-24">
-            <div class="flex items-center justify-between mb-10 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-24">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 md:mb-10 border-b border-gray-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span class="w-2 h-8 bg-red-600 rounded-full"></span> Özel Mantılarımız
                 </h2>
                 <span
                     class="text-[10px] font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Meşhur</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
                 <div
                     class="product-card group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-56 md:h-64 overflow-hidden relative">
                         <img src="/assets/yemeksepeti/kayseri-manti.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Kayseri Mantısı">
                     </div>
-                    <div class="p-8 text-center">
+                    <div class="p-6 md:p-8 text-center">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Kayseri Mantısı</h3>
                         <p class="text-gray-500 text-sm leading-relaxed font-light">Zahmetle hazırlanan, minik
                             hamurların kıyma ile buluştuğu efsane tat.</p>
@@ -266,12 +281,12 @@
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-56 md:h-64 overflow-hidden relative">
                         <img src="/assets/mantilar/tepsi.gif"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Tepsi Mantısı">
                     </div>
-                    <div class="p-8 text-center">
+                    <div class="p-6 md:p-8 text-center">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Tepsi Mantısı</h3>
                         <p class="text-gray-500 text-sm leading-relaxed font-light">Fırında nar gibi kızartılarak
                             hazırlanan, çıtır dokulu özel sunum.</p>
@@ -279,12 +294,12 @@
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-56 md:h-64 overflow-hidden relative">
                         <img src="/assets/yemeksepeti/citir-manti.jpg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Çıtır Mantı">
                     </div>
-                    <div class="p-8 text-center">
+                    <div class="p-6 md:p-8 text-center">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Çıtır Mantı</h3>
                         <p class="text-gray-500 text-sm leading-relaxed font-light">Kızgın yağda kızarmış, yoğurt ve
                             özel sosuyla iştah kabartan lezzet.</p>
@@ -292,12 +307,12 @@
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-56 md:h-64 overflow-hidden relative">
                         <img src="/assets/mantilar/karisikmanti.jpeg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Karışık Mantı">
                     </div>
-                    <div class="p-8 text-center">
+                    <div class="p-6 md:p-8 text-center">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Karışık Mantı</h3>
                         <p class="text-gray-500 text-sm leading-relaxed font-light">Yarısı kızartılmış, yarısı
                             haşlanmış. Yoğurt ve özel sosuyla.</p>
@@ -305,12 +320,12 @@
                 </div>
                 <div
                     class="product-card group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-50">
-                    <div class="h-64 overflow-hidden relative">
+                    <div class="h-56 md:h-64 overflow-hidden relative">
                         <img src="/assets/mantilar/gadaspecial.jpeg"
                             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                             alt="Special Mantı">
                     </div>
-                    <div class="p-8 text-center">
+                    <div class="p-6 md:p-8 text-center">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Gada Special Mantı</h3>
                         <p class="text-gray-500 text-sm leading-relaxed font-light">Parmesan, tulum ve kaşar peynirinin
                             fesleğen, ceviz ve tereyağı ile buluşması.</p>
@@ -319,9 +334,9 @@
             </div>
         </section>
 
-        <section class="mb-24 relative overflow-hidden">
-            <div class="flex items-center justify-between mb-10 border-b border-gray-100 pb-4 relative z-10">
-                <h2 class="text-3xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-24 relative overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 md:mb-10 border-b border-gray-100 pb-4 relative z-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex items-center gap-3">
                     <span
                         class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white text-lg">✨</span>
                     Yeni Lezzetlerimiz
@@ -331,16 +346,16 @@
                     Çıktı</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 relative z-10">
                 <div
-                    class="product-card group bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-red-50 p-4">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <div class="w-full lg:w-1/2 h-64 rounded-[2rem] overflow-hidden">
+                    class="product-card group bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-red-50 p-4">
+                    <div class="flex flex-col lg:flex-row gap-5 lg:gap-8">
+                        <div class="w-full lg:w-1/2 h-56 md:h-64 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
                             <img src="/assets/yeniler/fellah.jpg"
                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                                 alt="Fellah Köfte">
                         </div>
-                        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                        <div class="w-full lg:w-1/2 flex flex-col justify-center px-2 lg:px-0">
                             <span class="text-red-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">Kayseri
                                 Usulü</span>
                             <h3 class="text-2xl font-bold text-gray-900 mb-4">Fellah Köfte</h3>
@@ -351,14 +366,14 @@
                 </div>
 
                 <div
-                    class="product-card group bg-white rounded-[3rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-red-50 p-4">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <div class="w-full lg:w-1/2 h-64 rounded-[2rem] overflow-hidden">
+                    class="product-card group bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-red-50 p-4">
+                    <div class="flex flex-col lg:flex-row gap-5 lg:gap-8">
+                        <div class="w-full lg:w-1/2 h-56 md:h-64 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
                             <img src="/assets/yeniler/eriste.jpg"
                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                                 alt="Erişte">
                         </div>
-                        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                        <div class="w-full lg:w-1/2 flex flex-col justify-center px-2 lg:px-0">
                             <span class="text-red-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">Yöresel
                                 Dokunuş</span>
                             <h3 class="text-2xl font-bold text-gray-900 mb-4">Erişte</h3>
@@ -370,9 +385,9 @@
             </div>
         </section>
 
-        <section class="mb-24 px-4">
-            <div class="flex items-center justify-between mb-10 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-24 md:px-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 md:mb-10 border-b border-gray-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span class="w-2 h-8 bg-orange-500 rounded-full"></span> Gözlemeler
                 </h2>
                 <span
@@ -381,7 +396,7 @@
             </div>
 
             <h3 class="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-6 border-b pb-2">Klasik Lezzetler</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
                     <div class="h-40 md:h-48 overflow-hidden">
@@ -450,7 +465,7 @@
                 </div>
             </div>
 <h3 class="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-6 border-b pb-2 mt-12">Etli</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
                     <div class="h-40 md:h-48 overflow-hidden">
@@ -497,7 +512,7 @@
                 </div>
             </div>
 <h3 class="text-xs font-black text-orange-500 uppercase tracking-[0.2em] mb-6 border-b pb-2 mt-12">Tatlı Gözlemeler</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 <div
                     class="product-card group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
                     <div class="h-40 md:h-48 overflow-hidden">
@@ -545,9 +560,9 @@
             </div>
         </section>
 
-        <section class="mb-24 px-4">
-            <div class="flex items-center justify-between mb-10 border-b border-gray-100 pb-4">
-                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+        <section class="mb-16 md:mb-24 md:px-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8 md:mb-10 border-b border-gray-100 pb-4">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-3">
                     <span class="w-2 h-8 bg-blue-500 rounded-full"></span> İçecekler
                 </h2>
                 <span
@@ -555,7 +570,7 @@
                     Gibi & Sıcak</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <div
                     class="bg-white p-6 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
                     <h4
@@ -627,21 +642,39 @@
 
     </main>
 
-    <footer class="bg-gray-900 text-white py-16 px-6 mt-24">
+    <footer class="bg-gray-900 text-white py-12 md:py-16 px-6 mt-16 md:mt-24">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-center md:text-left">
                 <h2 class="handwritten text-3xl text-red-500 mb-2">Gadasını Aldığım Mantı</h2>
                 <p class="text-gray-500 text-[10px] tracking-widest uppercase font-bold">Ankara'nın Mantı Durağı</p>
             </div>
-            <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
                 <a href="index.html" class="hover:text-white transition">Ana Sayfa</a>
                 <a href="urunler.html" class="hover:text-white transition">Ürünler</a>
                 <a href="iletisim.html" class="hover:text-white transition">İletişim</a>
             </div>
-            <p class="text-[10px] text-gray-600">© 2026 Gadasını Aldığım. Tüm Hakları Saklıdır.</p>
+            <p class="text-[10px] text-gray-600 text-center">© 2026 Gadasını Aldığım. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 
+
+    <script>
+        (function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function () {
+                var open = !menu.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', open);
+            });
+            menu.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', false);
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
